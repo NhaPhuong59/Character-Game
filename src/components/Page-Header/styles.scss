@@ -1,10 +1,25 @@
-@import '../../styles/constants';
+@import "../../styles/constants";
 
 .page-header {
-    .title {
-      color: $egyptianGreen;
-       font-size: 50px;
-       font-weight: 700;
-       text-shadow: 3px 3px $whiteColor;
-    }
+  text-align: center;
+  .title {
+    color: $egyptianGreen;
+    font-size: 50px;
+    font-weight: 700;
+    text-shadow: 3px 3px $whiteColor;
+    text-transform: uppercase;
   }
+  .subtitle {
+    color: #f90;
+    font-size: 30px;
+    font-weight: 900;
+    text-shadow: 3px 3px #0baf94;
+    text-transform: uppercase;
+  }
+  .devider {
+    border-bottom: 4px solid rgba(255, 41, 41, 0.555);
+    height: 1px;
+    margin: 20px auto;
+    width: 50%;
+  }
+}
