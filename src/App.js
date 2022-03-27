@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import PageHeader from "./components/Page-Header";
 import Avatar from "./components/Avatar";
 import PartList from "./components/PartList";
-import "./styles/global.scss";
 import "./styles.scss";
 
 function App() {
@@ -40,8 +39,6 @@ function App() {
   const randomizePart = () => {
     setPart(getRandomPart);
   };
-  // const [clickAble, setclickAble] = useState(initialState);
-  // clickAble = "true"
   const setImage = (name, image) => {
     setPart({ ...parts, [name]: image });
   };
@@ -54,22 +51,19 @@ function App() {
           <Avatar part={parts} randomizePart={randomizePart} />
         </div>
         <div className="all-part-list">
-          {all_Images.map((item) => {
+          {all_Images.map(({ name, images }) => {
             return (
               <PartList
-                key={item.name}
-                name={item.name}
-                images={item.images}
+                key={name}
+                name={name}
+                images={images}
                 setImage={setImage}
-                selectedImage={parts[item.name]}
+                selectedImage={parts[name]}
               />
             );
           })}
         </div>
       </div>
-      {/* {console.log(all_Images.map((item)=>{
-         return (<PartList name={item.name} images= {item.images} setImage={setImage}/>)
-        }))} */}
     </div>
   );
 }

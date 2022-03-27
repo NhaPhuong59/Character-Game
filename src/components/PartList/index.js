@@ -9,11 +9,9 @@ function PartList({ name, images, setImage, selectedImage }) {
         {images.map((image, index) => {
           return (
             <div
-              className={
-                selectedImage === image
-                  ? "selected image-wrapper"
-                  : "image-wrapper"
-              }
+              className={`image-wrapper ${
+                selectedImage === image ? "selected" : ""
+              }`}
               key={index}
               onClick={() => setImage(name, image)}
             >
